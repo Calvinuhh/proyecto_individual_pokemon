@@ -6,9 +6,9 @@ const Pokemon = database.define(
   "Pokemon",
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -16,7 +16,9 @@ const Pokemon = database.define(
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue:
+        "https://cdn.custom-cursor.com/packs/8904/pokemon-unown-pack.png",
+      // allowNull: false
     },
     life: {
       type: DataTypes.INTEGER,

@@ -5,9 +5,9 @@ const Type = database.define(
   "Type",
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
     },
     type: {
       type: DataTypes.ENUM(
