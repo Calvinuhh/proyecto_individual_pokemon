@@ -6,7 +6,7 @@ const createPokemon = async (req, res) => {
   try {
     const newPokemon = await Pokemon.create({
       id,
-      name,
+      name: name.toLowerCase(),
       image,
       life,
       attack,

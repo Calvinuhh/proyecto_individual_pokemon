@@ -18,6 +18,7 @@ const Pokemon = database.define(
       type: DataTypes.STRING,
       defaultValue:
         "https://cdn.custom-cursor.com/packs/8904/pokemon-unown-pack.png",
+      isUrl: true,
       // allowNull: false
     },
     life: {

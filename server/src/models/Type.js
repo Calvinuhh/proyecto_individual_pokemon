@@ -9,7 +9,7 @@ const Type = database.define(
       primaryKey: true,
       allowNull: false,
     },
-    type: {
+    name: {
       type: DataTypes.ENUM(
         "normal",
         "fighting",
