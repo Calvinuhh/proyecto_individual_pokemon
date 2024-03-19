@@ -1,8 +1,12 @@
 const { Router } = require("express");
-const createPokemonsApi = require("../controllers/createPokemonsApi");
+const createPokemonsDB = require("../controllers/createPokemonsDB");
+const pokemonsAPI = require("../controllers/pokemonsAPI");
+const pokemonsAPIById = require("../controllers/pokemonsAPIById");
 
 const apiPokemonsRouter = Router();
 
-apiPokemonsRouter.get("/pokemons", createPokemonsApi);
+apiPokemonsRouter.get("/pokemons_db", createPokemonsDB);
+apiPokemonsRouter.get("/pokemons_data", pokemonsAPI);
+apiPokemonsRouter.get("/pokemons_data/:id", pokemonsAPIById);
 
 module.exports = apiPokemonsRouter;

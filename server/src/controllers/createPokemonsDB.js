@@ -2,7 +2,7 @@ const axios = require("axios");
 const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
 const Pokemon = require("../models/Pokemon");
 
-const createPokemonsApi = async (req, res) => {
+const createPokemonsDB = async (req, res) => {
   const arr = [];
   try {
     const result = await axios(url);
@@ -37,4 +37,4 @@ const createPokemonsApi = async (req, res) => {
   }
 };
 
-module.exports = createPokemonsApi;
+module.exports = createPokemonsDB;

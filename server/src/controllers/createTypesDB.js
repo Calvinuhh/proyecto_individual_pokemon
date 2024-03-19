@@ -2,7 +2,7 @@ const axios = require("axios");
 const url = "https://pokeapi.co/api/v2/type";
 const Type = require("../models/Type");
 
-const createTypesApi = async (req, res) => {
+const createTypesDB = async (req, res) => {
   const arr = [];
 
   try {
@@ -29,4 +29,4 @@ const createTypesApi = async (req, res) => {
   }
 };
 
-module.exports = createTypesApi;
+module.exports = createTypesDB;
