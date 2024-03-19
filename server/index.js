@@ -8,3 +8,4 @@ database.sync({ force: true }).then(() => {
     console.log(`Server listening on port: http://localhost:${PORT}`);
   });
 });
+

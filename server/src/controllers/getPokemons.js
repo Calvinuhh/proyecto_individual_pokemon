@@ -1,4 +1,5 @@
 const Pokemon = require("../models/Pokemon");
+const Type = require("../models/Type");
 
 const getPokemons = async (req, res) => {
   try {
@@ -7,10 +8,25 @@ const getPokemons = async (req, res) => {
     if (name) {
       const findPokemonByName = await Pokemon.findOne({
         where: { name: name.toLowerCase() },
+        include: {
+          model: Type,
+          attributes: ["name"],
+          through: {
+            attributes: [],
+          },
+        },
       });
       res.status(200).json(findPokemonByName);
     } else {
-      const findAllPokemons = await Pokemon.findAll();
+      const findAllPokemons = await Pokemon.findAll({
+        include: {
+          model: Type,
+          attributes: ["name"],
+          through: {
+            attributes: [],
+          },
+        },
+      });
       res.status(200).json(findAllPokemons);
     }
   } catch (error) {
