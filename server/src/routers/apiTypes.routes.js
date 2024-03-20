@@ -3,6 +3,6 @@ const createTypesDB = require("../controllers/createTypesDB");
 
 const apiTypesRouter = Router();
 
-apiTypesRouter.get("/types_db", createTypesDB);
+apiTypesRouter.get("/types", createTypesDB);
 
 module.exports = apiTypesRouter;

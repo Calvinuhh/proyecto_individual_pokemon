@@ -4,6 +4,7 @@ const url2 = "https://pokeapi.co/api/v2/pokemon/";
 
 const pokemonsAPI = async (req, res) => {
   const { name } = req.query;
+
   const arr = [];
   const dataResults = [];
   try {
@@ -62,7 +63,7 @@ const pokemonsAPI = async (req, res) => {
       res.status(200).json(dataResults);
     }
   } catch (error) {
-    res.status(500).json(error.message);
+    res.status(500).json({ message: "El pokemon no ha sido encontrado" });
   }
 };
 

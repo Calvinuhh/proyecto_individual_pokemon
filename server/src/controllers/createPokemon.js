@@ -1,21 +1,10 @@
 const Pokemon = require("../models/Pokemon");
 
 const createPokemon = async (req, res) => {
-  const {
-    id,
-    name,
-    image,
-    life,
-    attack,
-    defense,
-    speed,
-    height,
-    weight,
-    types,
-  } = req.body;
+  const { name, image, life, attack, defense, speed, height, weight, types } =
+    req.body;
   try {
     const newPokemon = await Pokemon.create({
-      id,
       name: name.toLowerCase(),
       image,
       life,
