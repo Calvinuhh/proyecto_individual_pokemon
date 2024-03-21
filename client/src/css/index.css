@@ -1,0 +1,161 @@
+:root {
+  --itimFont: "itim";
+  --truculentaFont: "truculenta";
+  --color1: #b62f36;
+  --color2: #aad4df;
+  --color3: #5f2b31;
+  --color4: #a3636e;
+  --color5: #a2cad4;
+  --color6: #3a434c;
+  --img_textos_pokemon: #ffcc01;
+}
+
+@font-face {
+  font-family: "pokemon";
+  src: url(../assets/Pokemon_Hollow.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "pokemon";
+  src: url(../assets/Pokemon_Solid.ttf);
+  font-weight: bold;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes shake-top {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 0;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.contenedor_landing {
+  margin-top: 110px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#img_landing {
+  width: 650px;
+  animation: heartbeat 5s ease-in-out infinite both;
+  margin-bottom: 20px;
+}
+
+.contenedor_comenzar {
+  width: 100%;
+  height: 100px;
+  background-image: url(../assets//comenzar_img.png);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-position: center;
+  animation: shake-top 4s infinite both;
+  transition: 0.3 ease;
+}
+
+.contenedor_comenzar:hover {
+  cursor: pointer;
+  animation: jello-horizontal 0.8s;
+  background-image: url(../assets/comenzar_amarillo.png);
+}
+
+.contenedor_footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#footer_landing {
+  font-family: var(--itimFont);
+  font-size: 28px;
+  color: var(--color6);
+  text-align: center;
+  position: absolute;
+  top: 90px;
+}
+
+@media (width <= 680px) {
+  #img_landing {
+    width: 100%;
+  }
+
+  #footer_landing {
+    position: fixed;
+    bottom: 50px;
+  }
+
+  .contenedor_comenzar {
+    background-size: 100%;
+  }
+}
