@@ -1,12 +1,9 @@
-import React from "react";
 import "../../css/index.css";
 import pokemons_welcome from "../../assets/pokemons_welcome.png";
+import welcome_img from "../../assets/comenzar_img.png";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const handleRedirect = () => {
-    window.location.href = "./home";
-  };
-
   return (
     <>
       <div className="contenedor_landing">
@@ -15,7 +12,11 @@ const Landing = () => {
           src={pokemons_welcome}
           alt="pokemon_image_landing"
         />
-        <div onClick={handleRedirect} className="contenedor_comenzar"></div>
+        <div className="contenedor_comenzar">
+          <Link to="/home">
+            <img id="landing_texto" src={welcome_img} alt="comenzar_texto" />
+          </Link>
+        </div>
       </div>
 
       <div className="contenedor_footer">

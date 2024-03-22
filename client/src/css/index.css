@@ -112,20 +112,21 @@
 }
 
 .contenedor_comenzar {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100px;
-  background-image: url(../assets//comenzar_img.png);
-  background-repeat: no-repeat;
-  background-size: 400px;
-  background-position: center;
-  animation: shake-top 4s infinite both;
-  transition: 0.3 ease;
 }
 
-.contenedor_comenzar:hover {
+#landing_texto {
+  width: 600px;
+  animation: shake-top 3s infinite both;
+}
+
+#landing_texto:hover {
   cursor: pointer;
   animation: jello-horizontal 0.8s;
-  background-image: url(../assets/comenzar_amarillo.png);
+  content: url(../assets/comenzar_amarillo.png);
 }
 
 .contenedor_footer {
@@ -150,12 +151,7 @@
     width: 100%;
   }
 
-  #footer_landing {
-    position: fixed;
-    bottom: 50px;
-  }
-
-  .contenedor_comenzar {
-    background-size: 100%;
+  #landing_texto {
+    width: 100%;
   }
 }
