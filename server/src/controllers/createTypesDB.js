@@ -12,13 +12,11 @@ const createTypesDB = async (req, res) => {
     for (let i = 0; i < results.length; i++) {
       arr.push(results[i].url);
     }
-
     const promises = await arr.map((url) => axios(url));
 
     await Promise.all(promises).then((responses) => {
       responses.forEach((res) => {
         Type.create({
-          id: res.data.id,
           name: res.data.name,
         });
       });

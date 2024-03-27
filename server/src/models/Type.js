@@ -6,7 +6,7 @@ const Type = database.define(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     name: {

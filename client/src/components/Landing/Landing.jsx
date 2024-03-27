@@ -1,4 +1,5 @@
-import "../../css/index.css";
+import "./landing.css"
+import "../../css/index.css"
 import pokemons_welcome from "../../assets/pokemons_welcome.png";
 import welcome_img from "../../assets/comenzar_img.png";
 import { Link } from "react-router-dom";
