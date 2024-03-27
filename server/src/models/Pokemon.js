@@ -42,6 +42,11 @@ const Pokemon = database.define(
     weight: {
       type: DataTypes.INTEGER,
     },
+    createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
   },
   {
     timestamps: false,

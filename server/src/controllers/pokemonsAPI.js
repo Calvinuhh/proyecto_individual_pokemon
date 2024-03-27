@@ -1,5 +1,5 @@
 const axios = require("axios");
-const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+const url = "https://pokeapi.co/api/v2/pokemon?limit=100";
 const url2 = "https://pokeapi.co/api/v2/pokemon/";
 
 const pokemonsAPI = async (req, res) => {
@@ -12,8 +12,8 @@ const pokemonsAPI = async (req, res) => {
       const petition = await axios(`${url2 + name.toLowerCase()}`);
       const { data } = petition;
 
-      const { types } = data;
-      typesResult = types.map((type) => type.type.name);
+      // const { types } = data;
+      // typesResult = types.map((type) => type.type.name);
 
       res.status(200).json({
         id: data.id,
@@ -27,7 +27,7 @@ const pokemonsAPI = async (req, res) => {
         speed: data.stats[5].base_stat,
         height: data.height,
         weight: data.weight,
-        types: typesResult,
+        types: data.types.map((elem) => elem.type.name),
       });
     } else {
       const result = await axios(url);

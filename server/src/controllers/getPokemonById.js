@@ -1,24 +1,17 @@
-const Pokemon = require("../models/Pokemon");
-const Type = require("../models/Type");
+const { pokemonsApi, getPokemonsDB } = require("./getPokemons");
 
 const getPokemonById = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const pokemonId = await Pokemon.findOne({
-      where: {
-        id: id,
-      },
-      include: {
-        model: Type,
-        attributes: ["name"],
-        through: {
-          attributes: [],
-        },
-      },
-    });
+    const pokeapi = await pokemonsApi();
+    const pokeDB = await getPokemonsDB();
 
-    res.status(200).json(pokemonId);
+    const pokemons = pokeapi.concat(pokeDB);
+
+    const pokemonById = pokemons.filter((elem) => elem.id === Number(id));
+
+    res.status(200).json(pokemonById);
   } catch (error) {
     res.status(500).json(error.message);
   }
