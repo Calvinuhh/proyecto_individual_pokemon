@@ -5,7 +5,7 @@ import {
   TYPES,
   FILTER_CREATED,
   ORDER_BY_NAME,
-  ORDER_BY_ATTACK,
+  ORDER_ATTACK,
   FILTER_POKEMONS,
   ORDER_BY_HP,
   SEARCH_POKEMON_DETAIL,
@@ -84,7 +84,7 @@ const orderByName = (payload) => {
 
 const orderAttack = (payload) => {
   return {
-    type: ORDER_BY_ATTACK,
+    type: ORDER_ATTACK,
     payload,
   };
 };

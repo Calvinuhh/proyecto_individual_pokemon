@@ -1,0 +1,59 @@
+.contenedor_searchbar {
+  display: flex;
+  background-color: var(--color8);
+  flex-direction: row;
+  justify-content: space-around;
+  height: 90px;
+  align-items: center;
+}
+
+.contenedor_rutas {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  background-color: var(--color8);
+}
+
+.titulos_searchbar {
+  font-family: var(--itimFont);
+  font-size: 25px;
+  color: white;
+  background-color: var(--color8);
+  text-decoration: none;
+  transition: ease 0.5s;
+}
+
+.titulos_searchbar:hover {
+  font-size: 28px;
+  color: var(--color1);
+}
+
+.input_contenedor {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  background-color: var(--color8);
+  align-items: center;
+}
+
+#input {
+  font-family: var(--itimFont);
+  font-size: 20px;
+  background-color: white;
+  border: 1px var(--color1);
+  border-radius: 7px;
+}
+
+#button_searchbar {
+  background-color: var(--color8);
+  font-family: var(--itimFont);
+  font-size: 25px;
+  color: white;
+  transition: ease 0.3s;
+}
+
+#button_searchbar:hover {
+  font-size: 26px;
+  color: var(--color1);
+  text-decoration: underline;
+}
