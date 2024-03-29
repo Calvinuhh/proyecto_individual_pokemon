@@ -1,4 +1,3 @@
-import React from "react";
 import "./pagination.css";
 
 const Pagination = (props) => {
@@ -13,21 +12,19 @@ const Pagination = (props) => {
   }
 
   return (
-    <>
-      <div>
-        <ul className="contenedor_pagination">
-          {pages &&
-            pages.map((elem, i) => {
-              <li key={i}>
-                <button
-                  className="button_pagination"
-                  onClick={() => props.pagination(elem)}
-                ></button>
-              </li>;
-            })}
-        </ul>
-      </div>
-    </>
+    <div className="contenedor_pagination">
+      {pages &&
+        pages.map((elem, i) => (
+          <p key={i} className="p_pagination">
+            <button
+              className="button_pagination"
+              onClick={() => props.pagination(elem)}
+            >
+              {elem}
+            </button>
+          </p>
+        ))}
+    </div>
   );
 };
 

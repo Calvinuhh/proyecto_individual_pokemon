@@ -1,4 +1,4 @@
-import "./searchbar.css"
+import "./searchbar.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -20,15 +20,15 @@ const SearchBar = () => {
 
   return (
     <div className="contenedor_searchbar">
-        <div className="contenedor_rutas">
-          <Link to={"/home"} className="titulos_searchbar">
-            Home
-          </Link>
+      <div className="contenedor_rutas">
+        <Link to={"/home"} className="titulos_searchbar">
+          Home
+        </Link>
 
-          <Link to={"/form"} className="titulos_searchbar">
-            Nuevo Pokemon
-          </Link>
-        </div>
+        <Link to={"/form"} className="titulos_searchbar">
+          Nuevo Pokemon
+        </Link>
+      </div>
 
       <div className="input_contenedor">
         <input

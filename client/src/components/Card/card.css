@@ -1,0 +1,43 @@
+.card_contenedor {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 25px;
+  background-color: cadetblue;
+  height: 515px;
+  transition: ease-out 0.5s;
+}
+
+.card_contenedor:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px var(--color8);
+}
+
+.card_image {
+  width: 300px;
+  background-color: cadetblue;
+  margin-bottom: 18px;
+}
+
+.nombre_card {
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.life_attack {
+  font-size: 20px;
+}
+
+.card_info {
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.nombre_card,
+.life_attack,
+.card_info {
+  font-family: var(--itimFont);
+  font-weight: normal;
+  color: var(--color6);
+  background-color: cadetblue;
+}

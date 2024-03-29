@@ -28,7 +28,7 @@ const pokemonsApi = async () => {
     const getAllPokemon = await Promise.all(dataPokemon);
     return getAllPokemon;
   } catch (error) {
-    throw new Error(error.message);
+    throw new Error(error);
   }
 };
 
@@ -45,7 +45,7 @@ const getPokemonsDB = async () => {
     });
     return findAllPokemons;
   } catch (error) {
-    throw new Error(error.message);
+    throw new Error(error);
   }
 };
 

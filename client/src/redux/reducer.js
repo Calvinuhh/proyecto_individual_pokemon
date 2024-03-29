@@ -16,17 +16,18 @@ const intialState = {
   pokemons: [],
   types: [],
   detail: {},
-  error: false,
+  notFound: false,
 };
 
 const reducer = (state = intialState, { type, payload }) => {
   switch (type) {
+    
     case SEARCH_POKEMONS:
       return {
         ...state,
         allPokemons: payload,
         pokemons: payload,
-        error: false,
+        notFound: false,
       };
 
     case GET_BY_NAME:
@@ -34,13 +35,13 @@ const reducer = (state = intialState, { type, payload }) => {
         return {
           ...state,
           pokemons: [],
-          error: true,
+          notFound: true,
         };
       } else {
         return {
           ...state,
           pokemons: payload,
-          error: false,
+          notFound: false,
         };
       }
 
@@ -98,10 +99,10 @@ const reducer = (state = intialState, { type, payload }) => {
       let sortedHp = [...state.allPokemons];
 
       if (payload === "min") {
-        sortedHp.sort((a, b) => a.hp - b.hp);
+        sortedHp.sort((a, b) => a.life - b.life);
       }
       if (payload === "max") {
-        sortedHp.sort((a, b) => b.hp - a.hp);
+        sortedHp.sort((a, b) => b.life - a.life);
       }
       return {
         ...state,

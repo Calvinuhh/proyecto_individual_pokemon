@@ -20,7 +20,7 @@ const Home = () => {
   const allPokemons = useSelector((state) => state.pokemons);
   const allTypes = useSelector((state) => state.types);
   const notFound = useSelector((state) => state.notFound);
-  const [,setOrder] = useState("");
+  const [setOrder] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage] = useState(12);
   const lastPokemonIndex = currentPage * pokemonsPerPage;
@@ -82,6 +82,76 @@ const Home = () => {
     <div className="home_contenedor">
       <SearchBar></SearchBar>
 
+      <div className="contenedor_filtros">
+        <select className="filtros" onChange={(event) => handleSort(event)}>
+          <option className="options" value="asc">
+            A - Z
+          </option>
+          <option className="options" value="des">
+            Z - A
+          </option>
+        </select>
+
+        <select
+          className="filtros"
+          onChange={(event) => handleFilterTypes(event)}
+        >
+          <option className="options">Tipos</option>
+          <option className="options" value="All">
+            Todos
+          </option>
+          {allTypes?.map((event) => {
+            return (
+              <option className="options" key={event.id} value={event.name}>
+                {event.name}
+              </option>
+            );
+          })}
+        </select>
+
+        <select
+          className="filtros"
+          onChange={(event) => handleSortAttack(event)}
+        >
+          <option className="options" value="attack">
+            Ataque
+          </option>
+          <option className="options" value="min">
+            min
+          </option>
+          <option className="options" value="max">
+            max
+          </option>
+        </select>
+
+        <select className="filtros" onChange={(event) => handleSortHp(event)}>
+          <option className="options" value="hp">
+            life
+          </option>
+          <option className="options" value="min">
+            min
+          </option>
+          <option className="options" value="max">
+            max
+          </option>
+        </select>
+
+        <select
+          className="filtros"
+          onChange={(event) => handleFilterCreated(event)}
+        >
+          <option className="options" value="All">
+            Origen
+          </option>
+          <option className="options" value="created">
+            Creados
+          </option>
+          <option className="options" value="api">
+            Api
+          </option>
+        </select>
+      </div>
+
       <div className="recargar_contenedor">
         <button
           className="button_recargar"
@@ -92,53 +162,6 @@ const Home = () => {
           Recargar
         </button>
       </div>
-
-      <select className="az" onChange={(event) => handleSort(event)}>
-        <option value="asc">A - Z</option>
-        <option value="des">Z - A</option>
-      </select>
-
-      <select
-        className="types_button"
-        onChange={(event) => handleFilterTypes(event)}
-      >
-        <option>Tipos</option>
-        <option value="All">Todos</option>
-        {allTypes?.map((event) => {
-          return (
-            <option key={event.id} value={event.name}>
-              {event.name}
-            </option>
-          );
-        })}
-      </select>
-
-      <select
-        className="attacklife_button"
-        onChange={(event) => handleSortAttack(event)}
-      >
-        <option value="attack">Ataque</option>
-        <option value="min">min</option>
-        <option value="max">max</option>
-      </select>
-
-      <select
-        className="attacklife_button"
-        onChange={(event) => handleSortHp(event)}
-      >
-        <option value="hp">hp</option>
-        <option value="min">min</option>
-        <option value="max">max</option>
-      </select>
-
-      <select
-        className="origen_button"
-        onChange={(event) => handleFilterCreated(event)}
-      >
-        <option value="All">Origen</option>
-        <option value="created">Creados</option>
-        <option value="api">Api</option>
-      </select>
 
       <div className="contenedor_cards_home">
         {currentPokemons.length ? (
@@ -168,14 +191,12 @@ const Home = () => {
         )}
       </div>
 
-      <div>
-        <Pagination
-          pokemonsPerPage={pokemonsPerPage}
-          allPokemons={allPokemons.length}
-          pagination={pagination}
-          page={currentPage}
-        ></Pagination>
-      </div>
+      <Pagination
+        pokemonsPerPage={pokemonsPerPage}
+        allPokemons={allPokemons.length}
+        pagination={pagination}
+        page={currentPage}
+      ></Pagination>
     </div>
   );
 };

@@ -12,9 +12,6 @@ const pokemonsAPI = async (req, res) => {
       const petition = await axios(`${url2 + name.toLowerCase()}`);
       const { data } = petition;
 
-      // const { types } = data;
-      // typesResult = types.map((type) => type.type.name);
-
       res.status(200).json({
         id: data.id,
         name: data.name,

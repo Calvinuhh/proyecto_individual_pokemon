@@ -42,6 +42,7 @@
   background-color: white;
   border: 1px var(--color1);
   border-radius: 7px;
+  height: 30px;
 }
 
 #button_searchbar {
