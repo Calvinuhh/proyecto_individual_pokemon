@@ -10,10 +10,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={Landing}></Route>
-          <Route path="/home" Component={Home}></Route>
-          <Route path="/detail:id" Component={Detail}></Route>
-          <Route path="/form" Component={Form}></Route>
+          <Route path="/" element={<Landing />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/detail/:id" element={<Detail />}></Route>
+          <Route path="/form" element={<Form />}></Route>
         </Routes>
       </BrowserRouter>
     </>
