@@ -21,7 +21,7 @@ const SearchBar = () => {
   return (
     <div className="contenedor_searchbar">
       <div className="contenedor_rutas">
-        <Link to={"/home"} className="titulos_searchbar">
+        <Link to={"/"} className="titulos_searchbar">
           Home
         </Link>
 

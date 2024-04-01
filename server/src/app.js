@@ -8,7 +8,11 @@ const typesRouter = require("./routers/types.routes");
 
 const server = express();
 
-server.use(cors());
+server.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 server.use(json());
 server.use("/server/api", apiPokemonsRouter);
 server.use("/server/api", apiTypesRouter);

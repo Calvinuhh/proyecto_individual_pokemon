@@ -1,4 +1,5 @@
 import "./home.css";
+import gif_cargando from "../../assets/gif_cargando.gif";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import Pagination from "../Pagination/Pagination.jsx";
 import {
   pokemons,
   filterCreated,
-  types,
+  getTypes,
   orderAttack,
   orderByHp,
   orderByName,
@@ -20,7 +21,7 @@ const Home = () => {
   const allPokemons = useSelector((state) => state.pokemons);
   const allTypes = useSelector((state) => state.types);
   const notFound = useSelector((state) => state.notFound);
-  const [setOrder] = useState("");
+  const [, setOrder] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage] = useState(12);
   const lastPokemonIndex = currentPage * pokemonsPerPage;
@@ -36,7 +37,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(pokemons());
-    dispatch(types());
+    dispatch(getTypes());
   }, [dispatch]);
 
   const handleClick = (event) => {
@@ -186,7 +187,9 @@ const Home = () => {
           </div>
         ) : (
           <div className="cargando_contenedor">
-            <p className="cargando_parrafo">cargando...</p>
+            <p className="cargando_parrafo">
+              cargando... <img id="gif_loading" src={gif_cargando} alt="gif" />
+            </p>
           </div>
         )}
       </div>

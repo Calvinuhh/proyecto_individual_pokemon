@@ -1,4 +1,5 @@
 import "./detail.css";
+import gif_cargando from "../../assets/gif_cargando.gif";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -14,36 +15,44 @@ const Detail = () => {
     return () => dispatch(clearDetail());
   }, []);
 
-  const detailPokemons = useSelector((state) => state.detail);
+  const detailPokemon = useSelector((state) => state.detail);
 
   return (
     <>
-      {detailPokemons.length > 0 ? (
+      {detailPokemon.length > 0 ? (
         <div className="contenedor_detail">
-          <img
-            className="imagen_contenedor"
-            src={detailPokemons[0]?.image}
-            alt={detailPokemons[0].name}
-          />
-          {detailPokemons[0].name}
+          <div className="contenedor_name_image">
+            <h2 id="detail_name">{detailPokemon[0].name}</h2>
+            <img
+              id="detail_image"
+              src={detailPokemon[0]?.image}
+              alt={detailPokemon[0].name}
+            />
+          </div>
 
-          {detailPokemons[0]?.types.join(" ")}
+          <div className="detail_data_contenedor">
+            <div className="tipos_detail_contenedor">
+              <h3 id="detail_tipos">tipos:</h3>
 
-          {detailPokemons[0]?.hp}
+              <p id="detail_types">{detailPokemon[0]?.types.join(" ")}</p>
+            </div>
 
-          {detailPokemons[0]?.attack}
-
-          {detailPokemons[0]?.defense}
-
-          {detailPokemons[0]?.speed}
-
-          {detailPokemons[0]?.height}
-
-          {detailPokemons[0]?.weight}
+            <div className="life_to_weight_contenedor">
+              <p className="p_detail">id: {detailPokemon[0]?.id}</p>
+              <p className="p_detail">life: {detailPokemon[0]?.life}</p>
+              <p className="p_detail">attack: {detailPokemon[0]?.attack}</p>
+              <p className="p_detail">defense: {detailPokemon[0]?.defense}</p>
+              <p className="p_detail">speed: {detailPokemon[0]?.speed}</p>
+              <p className="p_detail">height: {detailPokemon[0]?.height}</p>
+              <p className="p_detail">weight: {detailPokemon[0]?.weight}</p>
+            </div>
+          </div>
         </div>
       ) : (
-        <div className="contenedor_loagind">
-          <p className="contenedor_parrafo">cargando...</p>
+        <div className="contenedor_loading">
+          <p className="cargando_parrafo">
+            cargando... <img id="gif_loading" src={gif_cargando} alt="gif" />
+          </p>
         </div>
       )}
     </>

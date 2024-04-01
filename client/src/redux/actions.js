@@ -1,4 +1,6 @@
+import Swal from "sweetalert2";
 import axios from "axios";
+
 import {
   GET_BY_NAME,
   SEARCH_POKEMONS,
@@ -15,9 +17,7 @@ import {
 const pokemons = () => {
   return async (dispatch) => {
     try {
-      const petition = await axios.get(
-        "http://localhost:3001/server/pokemons/"
-      );
+      const petition = await axios.get("/server/pokemons/");
       const { data } = petition;
       return dispatch({ type: SEARCH_POKEMONS, payload: data });
     } catch (error) {
@@ -29,15 +29,20 @@ const pokemons = () => {
 const createNewPokemon = (pokemon) => {
   return async () => {
     try {
-      const petition = await axios.post(
-        "http://localhost:3001/server/pokemons/",
-        pokemon
-      );
-      alert("Pokemon creado!");
+      const petition = await axios.post("/server/pokemons/", pokemon);
+      Swal.fire({
+        title: "Creado!",
+        text: "Tu pokemon ha sido creado!",
+        icon: "success",
+      });
 
       return petition;
     } catch (error) {
-      alert(error.petition.data.error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo salio mal...",
+      });
     }
   };
 };
@@ -45,9 +50,7 @@ const createNewPokemon = (pokemon) => {
 const getPokemonByName = (name) => {
   return async (dispatch) => {
     try {
-      const petition = await axios(
-        `http://localhost:3001/server/pokemons?name=${name}`
-      );
+      const petition = await axios(`/server/pokemons?name=${name}`);
       const { data } = petition;
 
       return dispatch({ type: GET_BY_NAME, payload: data });
@@ -60,9 +63,9 @@ const getPokemonByName = (name) => {
   };
 };
 
-const types = () => {
+const getTypes = () => {
   return async (dispatch) => {
-    const petition = await axios("http://localhost:3001/server/types");
+    const petition = await axios("/server/types");
     const { data } = petition;
     return dispatch({ type: TYPES, payload: data });
   };
@@ -106,9 +109,7 @@ const filterPokemons = (payload) => {
 const pokemonDetail = (id) => {
   return async (dispatch) => {
     try {
-      const petition = await axios(
-        `http://localhost:3001/server/pokemons/${id}`
-      );
+      const petition = await axios(`/server/pokemons/${id}`);
       const { data } = petition;
       return dispatch({
         type: SEARCH_POKEMON_DETAIL,
@@ -130,7 +131,7 @@ export {
   pokemons,
   createNewPokemon,
   getPokemonByName,
-  types,
+  getTypes,
   filterCreated,
   orderByName,
   orderAttack,

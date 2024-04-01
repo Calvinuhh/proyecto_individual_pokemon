@@ -5,18 +5,18 @@ const validation = (input) => {
   if (!input.name) {
     errors.name = "Se requiere un nombre";
   }
-  if (input.name.length > 10) {
-    errors.name = "Debe ser menor a 10 carácteres";
+  if (input.name.length > 15) {
+    errors.name = "Debe ser menor a 15 carácteres";
   }
 
   if (!regexImage.test(input.image)) errors.image = "Ingresa una url valida";
   if (!input.image) errors.image = "La imagen no puede estar vacia";
 
-  if (!input.hp) {
-    errors.hp = "No puede estar vacio";
+  if (!input.life) {
+    errors.life = "No puede estar vacio";
   }
-  if (input.hp <= 0) {
-    errors.hp = "No puede ser menor a 0";
+  if (input.life <= 0) {
+    errors.life = "No puede ser menor a 0";
   }
 
   if (input.attack === "") {
@@ -27,52 +27,52 @@ const validation = (input) => {
     errors.defense = "No puede estar vacio";
   }
 
-  if (input.hp <= 0) {
-    errors.hp = "No puede ser menor a 0";
+  if (input.life <= 0) {
+    errors.life = "No puede ser menor o igual a 0";
   }
 
   if (input.attack <= 0) {
-    errors.attack = "No puede ser menor a 0";
+    errors.attack = "No puede ser menor o igual a 0";
   }
 
   if (input.defense <= 0) {
-    errors.defense = "No puede ser menor a 0";
+    errors.defense = "No puede ser menor o igual a 0";
   }
 
-  if (input.speed < 0) {
-    errors.speed = "No puede ser menor a 0";
+  if (input.speed <= 0) {
+    errors.speed = "No puede ser menor o igual a 0";
   }
 
-  if (input.height < 0) {
-    errors.height = "No puede ser menor a 0";
+  if (input.height <= 0) {
+    errors.height = "No puede ser menor o igual a 0";
   }
 
-  if (input.weight < 0) {
-    errors.weight = "No puede ser menor a 0";
+  if (input.weight <= 0) {
+    errors.weight = "No puede ser menor o igual a 0";
   }
 
   if (!/^([0-9])*$/.test(input.weight) && input.weight) {
-    errors.weight = "Solo se permiten numeros";
+    errors.weight = "Solo se permiten numeros positivos";
   }
 
   if (!/^([0-9])*$/.test(input.height) && input.height) {
-    errors.height = "Solo se permiten numeros";
+    errors.height = "Solo se permiten numeros positivos";
   }
 
-  if (!/^([0-9])*$/.test(input.hp)) {
-    errors.hp = "Solo se permiten numeros";
+  if (!/^([0-9])*$/.test(input.life)) {
+    errors.life = "Solo se permiten numeros positivos";
   }
 
   if (!/^([0-9])*$/.test(input.attack)) {
-    errors.attack = "Solo se permiten numeros";
+    errors.attack = "Solo se permiten numeros positivos";
   }
 
   if (!/^([0-9])*$/.test(input.defense)) {
-    errors.defense = "Solo se permiten numeros";
+    errors.defense = "Solo se permiten numeros positivos";
   }
 
   if (!/^([0-9])*$/.test(input.speed) && input.speed) {
-    errors.speed = "Solo se permiten numeros";
+    errors.speed = "Solo se permiten numeros positivos";
   }
 
   if (input.types.length <= 0) {
