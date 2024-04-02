@@ -8,6 +8,29 @@ const Form = () => {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
 
+  const handleTypes = {
+    1: "normal",
+    2: "fighting",
+    3: "flying",
+    4: "poison",
+    5: "ground",
+    6: "rock",
+    7: "bug",
+    8: "ghost",
+    9: "steel",
+    10: "fire",
+    11: "water",
+    12: "grass",
+    13: "electric",
+    14: "psychic",
+    15: "ice",
+    16: "dragon",
+    17: "dark",
+    18: "fairy",
+    19: "unknown",
+    20: "shadow",
+  };
+
   const [input, setInput] = useState({
     name: "",
     image: "",
@@ -70,10 +93,59 @@ const Form = () => {
 
   const handleSelect = (event) => {
     event.preventDefault();
+
     setInput({
       ...input,
-      types: [...input.types, event.target.value],
+      types: [
+        ...input.types,
+        event.target.value === "normal"
+          ? (event.target.value = 1)
+          : event.target.value === "fighting"
+          ? (event.target.value = 2)
+          : event.target.value === "flying"
+          ? (event.target.value = 3)
+          : event.target.value === "flying"
+          ? (event.target.value = 4)
+          : event.target.value === "poison"
+          ? (event.target.value = 5)
+          : event.target.value === "ground"
+          ? (event.target.value = 6)
+          : event.target.value === "rock"
+          ? (event.target.value = 7)
+          : event.target.value === "bug"
+          ? (event.target.value = 8)
+          : event.target.value === "ghost"
+          ? (event.target.value = 9)
+          : event.target.value === "steel"
+          ? (event.target.value = 10)
+          : event.target.value === "fire"
+          ? (event.target.value = 11)
+          : event.target.value === "water"
+          ? (event.target.value = 12)
+          : event.target.value === "grass"
+          ? (event.target.value = 13)
+          : event.target.value === "electric"
+          ? (event.target.value = 14)
+          : event.target.value === "psychic"
+          ? (event.target.value = 15)
+          : event.target.value === "ice"
+          ? (event.target.value = 16)
+          : event.target.value === "dragon"
+          ? (event.target.value = 17)
+          : event.target.value === "dark"
+          ? (event.target.value = 18)
+          : event.target.value === "fairy"
+          ? (event.target.value = 19)
+          : event.target.value === "unknown"
+          ? (event.target.value = 20)
+          : event.target.value === "shadow"
+          ? (event.target.value = 3)
+          : event.target.value === "flying"
+          ? (event.target.value = 3)
+          : null,
+      ],
     });
+
     setErrors(
       validation({
         ...input,

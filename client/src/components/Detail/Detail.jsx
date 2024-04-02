@@ -34,11 +34,16 @@ const Detail = () => {
             <div className="tipos_detail_contenedor">
               <h3 id="detail_tipos">tipos:</h3>
 
-              <p id="detail_types">
+              <div id="detail_types">
                 {detailPokemon[0]?.types
-                  ? detailPokemon[0]?.types.join(" ")
-                  : detailPokemon[0]?.Types.map((elem) => elem)}
-              </p>
+                  ? detailPokemon[0]?.types.map((elem, i) => {
+                    return <p key={i} className="p_type_detail">{elem}</p>;
+
+                  })
+                  : detailPokemon[0]?.Types.map((elem, i) => {
+                      return <p key={i} className="p_type_detail">{elem.name}</p>;
+                    })}
+              </div>
             </div>
 
             <div className="life_to_weight_contenedor">

@@ -165,6 +165,7 @@ const Home = () => {
       </div>
 
       <div className="contenedor_cards_home">
+        {console.log(currentPokemons)}
         {currentPokemons.length ? (
           currentPokemons?.map((elem, index) => {
             return (
@@ -175,7 +176,11 @@ const Home = () => {
                   attack={elem.attack}
                   image={elem.image}
                   id={elem.id}
-                  types={elem.types}
+                  types={
+                    elem.types
+                      ? elem.types
+                      : elem.Types.map((item) => item.name)
+                  }
                   key={index}
                 />
               </Link>
