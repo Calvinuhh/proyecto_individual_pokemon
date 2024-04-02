@@ -9,7 +9,7 @@ const getPokemonById = async (req, res) => {
 
     const pokemons = pokeapi.concat(pokeDB);
 
-    const pokemonById = pokemons.filter((elem) => elem.id === Number(id));
+    const pokemonById = pokemons.filter((elem) => elem.id == id);
 
     res.status(200).json(pokemonById);
   } catch (error) {

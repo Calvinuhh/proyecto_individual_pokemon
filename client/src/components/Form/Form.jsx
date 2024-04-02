@@ -15,6 +15,8 @@ const Form = () => {
     attack: "",
     defense: "",
     speed: "",
+    height: "",
+    weight: "",
     types: [],
   });
 
@@ -46,6 +48,8 @@ const Form = () => {
       attack: "",
       defense: "",
       speed: "",
+      height: "",
+      weight: "",
       types: [],
     });
   };

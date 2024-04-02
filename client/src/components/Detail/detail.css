@@ -12,8 +12,8 @@
 }
 
 .contenedor_detail {
-  margin-top: 150px;
   display: flex;
+  height: 900px;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -32,7 +32,7 @@
 }
 
 .detail_data_contenedor {
-  height: 500px;
+  height: 600px;
   width: 300px;
   gap: 20px;
   display: flex;
@@ -69,8 +69,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 15px;
   width: 300px;
+  height: 900px;
   color: white;
   background-color: var(--color4);
   border-radius: 20px;
@@ -80,5 +82,6 @@
 }
 
 .p_detail {
+  text-align: center;
   background-color: var(--color4);
 }
