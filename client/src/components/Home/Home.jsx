@@ -165,7 +165,6 @@ const Home = () => {
       </div>
 
       <div className="contenedor_cards_home">
-        {console.log(currentPokemons)}
         {currentPokemons.length ? (
           currentPokemons?.map((elem, index) => {
             return (

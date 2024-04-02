@@ -31,6 +31,9 @@ const Form = () => {
     20: "shadow",
   };
 
+  const numsTypes = Object.keys(handleTypes);
+  const valuesTypes = Object.values(handleTypes);
+
   const [input, setInput] = useState({
     name: "",
     image: "",
@@ -104,44 +107,40 @@ const Form = () => {
           ? (event.target.value = 2)
           : event.target.value === "flying"
           ? (event.target.value = 3)
-          : event.target.value === "flying"
-          ? (event.target.value = 4)
           : event.target.value === "poison"
-          ? (event.target.value = 5)
+          ? (event.target.value = 4)
           : event.target.value === "ground"
-          ? (event.target.value = 6)
+          ? (event.target.value = 5)
           : event.target.value === "rock"
-          ? (event.target.value = 7)
+          ? (event.target.value = 6)
           : event.target.value === "bug"
-          ? (event.target.value = 8)
+          ? (event.target.value = 7)
           : event.target.value === "ghost"
-          ? (event.target.value = 9)
+          ? (event.target.value = 8)
           : event.target.value === "steel"
-          ? (event.target.value = 10)
+          ? (event.target.value = 9)
           : event.target.value === "fire"
-          ? (event.target.value = 11)
+          ? (event.target.value = 10)
           : event.target.value === "water"
-          ? (event.target.value = 12)
+          ? (event.target.value = 11)
           : event.target.value === "grass"
-          ? (event.target.value = 13)
+          ? (event.target.value = 12)
           : event.target.value === "electric"
-          ? (event.target.value = 14)
+          ? (event.target.value = 13)
           : event.target.value === "psychic"
-          ? (event.target.value = 15)
+          ? (event.target.value = 14)
           : event.target.value === "ice"
-          ? (event.target.value = 16)
+          ? (event.target.value = 15)
           : event.target.value === "dragon"
-          ? (event.target.value = 17)
+          ? (event.target.value = 16)
           : event.target.value === "dark"
-          ? (event.target.value = 18)
+          ? (event.target.value = 17)
           : event.target.value === "fairy"
-          ? (event.target.value = 19)
+          ? (event.target.value = 18)
           : event.target.value === "unknown"
-          ? (event.target.value = 20)
+          ? (event.target.value = 19)
           : event.target.value === "shadow"
-          ? (event.target.value = 3)
-          : event.target.value === "flying"
-          ? (event.target.value = 3)
+          ? (event.target.value = 20)
           : null,
       ],
     });
@@ -157,7 +156,7 @@ const Form = () => {
   const handleDelete = (event) => {
     setInput({
       ...input,
-      types: input.types.filter((t) => t !== event),
+      types: input.types.filter((type) => type != event),
     });
   };
 
@@ -310,7 +309,49 @@ const Form = () => {
           <div className="types_form">
             {input.types.map((elem, i) => (
               <div className="contenedor_types_form" key={i}>
-                <p className="parrafo_types_form">{elem}</p>
+                <p className="parrafo_types_form">
+                  {elem === 1
+                    ? "normal"
+                    : elem === 2
+                    ? "fighting"
+                    : elem === 3
+                    ? "flying"
+                    : elem === 4
+                    ? "poison"
+                    : elem === 5
+                    ? "ground"
+                    : elem === 6
+                    ? "rock"
+                    : elem === 7
+                    ? "bug"
+                    : elem === 8
+                    ? "ghost"
+                    : elem === 9
+                    ? "steel"
+                    : elem === 10
+                    ? "fire"
+                    : elem === 11
+                    ? "water"
+                    : elem === 12
+                    ? "grass"
+                    : elem === 13
+                    ? "electric"
+                    : elem === 14
+                    ? "psychic"
+                    : elem === 15
+                    ? "ice"
+                    : elem === 16
+                    ? "dragon"
+                    : elem === 17
+                    ? "dark"
+                    : elem === 18
+                    ? "fairy"
+                    : elem === 19
+                    ? "unknown"
+                    : elem === 20
+                    ? "shadow"
+                    : null}
+                </p>
                 <button
                   className="button_types_form"
                   onClick={() => handleDelete(elem)}

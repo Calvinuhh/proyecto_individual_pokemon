@@ -26,6 +26,11 @@
   align-items: center;
 }
 
+#detail_image {
+  width: 550px;
+  height: 550px;
+}
+
 #detail_name {
   font-family: var(--itimFont);
   font-size: 60px;
