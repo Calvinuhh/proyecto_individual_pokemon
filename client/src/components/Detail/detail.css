@@ -94,3 +94,15 @@
   text-align: center;
   background-color: var(--color4);
 }
+
+.not_found_contenedor {
+  display: flex;
+  justify-content: center;
+  margin-top: 400px;
+}
+
+#not_fount {
+  font-family: var(--truculentaFont);
+  font-weight: normal;
+  font-size: 50px;
+}

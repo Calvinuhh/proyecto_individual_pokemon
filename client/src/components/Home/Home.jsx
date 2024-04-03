@@ -85,6 +85,7 @@ const Home = () => {
 
       <div className="contenedor_filtros">
         <select className="filtros" onChange={(event) => handleSort(event)}>
+          <option className="options">Orden</option>
           <option className="options" value="asc">
             A - Z
           </option>

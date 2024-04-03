@@ -64,6 +64,10 @@ const Detail = () => {
             </div>
           </div>
         </div>
+      ) : detailPokemon.length === 0 ? (
+        <div className="not_found_contenedor">
+        <h1 id="not_fount">Pokemon no encontrado :c</h1>
+      </div>
       ) : (
         <div className="contenedor_loading">
           <p className="cargando_parrafo">

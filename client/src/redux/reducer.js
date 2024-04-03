@@ -21,7 +21,6 @@ const intialState = {
 
 const reducer = (state = intialState, { type, payload }) => {
   switch (type) {
-    
     case SEARCH_POKEMONS:
       return {
         ...state,
@@ -118,7 +117,9 @@ const reducer = (state = intialState, { type, payload }) => {
         filterType = state.allPokemons;
       } else {
         filterType = state.allPokemons.filter((elem) =>
-          elem.types.includes(payload)
+          elem.types
+            ? elem.types.includes(payload)
+            : elem.Types.includes(payload)
         );
       }
       return {
