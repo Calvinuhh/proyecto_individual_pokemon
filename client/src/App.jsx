@@ -9,7 +9,7 @@ import axios from "axios";
 //Development
 // axios.defaults.baseURL = "http://localhost:3001";
 //Production
-axios.defaults.baseURL = "";
+axios.defaults.baseURL = "https://proyecto-pokemon-server.onrender.com";
 
 function App() {
   return (

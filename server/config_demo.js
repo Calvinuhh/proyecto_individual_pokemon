@@ -15,3 +15,5 @@
 //   DATABASE_NAME,
 //   PORT,
 // };
+
+// Para editar en desarrollo cambiar el import de las variables de entorno de process.env a require(".config.js")
