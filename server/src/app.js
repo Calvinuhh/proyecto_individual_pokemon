@@ -5,12 +5,13 @@ const apiPokemonsRouter = require("./routers/apiPokemons.routes");
 const apiTypesRouter = require("./routers/apiTypes.routes");
 const pokemonsRouter = require("./routers/pokemons.routes");
 const typesRouter = require("./routers/types.routes");
+const { FRONTEND_URL } = require("../config");
 
 const server = express();
 
 server.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: FRONTEND_URL,
   })
 );
 server.use(json());

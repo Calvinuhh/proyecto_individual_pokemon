@@ -5,7 +5,11 @@ import Home from "./components/Home/Home.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Form from "./components/Form/Form.jsx";
 import axios from "axios";
+
+//Development
 axios.defaults.baseURL = "http://localhost:3001";
+//Production
+// axios.defaults.baseURL = "";
 
 function App() {
   return (
