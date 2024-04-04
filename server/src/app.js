@@ -21,3 +21,4 @@ server.use("/server", pokemonsRouter);
 server.use("/server", typesRouter);
 
 module.exports = server;
+
