@@ -22,11 +22,11 @@ const SearchBar = () => {
     <div className="contenedor_searchbar">
       <div className="contenedor_rutas">
         <Link to={"/"} className="titulos_searchbar">
-          Home
+          <span className="titulos_span">Home</span>
         </Link>
 
         <Link to={"/form"} className="titulos_searchbar">
-          Nuevo Pokemon
+          <span className="titulos_span">Nuevo Pokemon</span>
         </Link>
       </div>
 

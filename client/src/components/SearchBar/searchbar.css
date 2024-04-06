@@ -58,3 +58,66 @@
   color: var(--color1);
   text-decoration: underline;
 }
+
+.titulos_span {
+  background-color: var(--color8);
+}
+
+@media (width <= 730px) {
+  .contenedor_searchbar {
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .contenedor_rutas {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    text-align: center;
+  }
+
+  .input_contenedor {
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  #input {
+    height: 50px;
+    width: 500px;
+    text-align: center;
+  }
+
+  .titulos_searchbar {
+    background-color: var(--color1);
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titulos_span {
+    background-color: var(--color1);
+  }
+
+  .titulos_searchbar:hover {
+    color: var(--color7);
+  }
+
+  #button_searchbar {
+    background-color: var(--color1);
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  #button_searchbar:hover {
+    color: var(--color7);
+  }
+}

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   border-radius: 25px;
   background-color: cadetblue;
   height: 470px;
@@ -19,6 +20,7 @@
   background-color: cadetblue;
   margin-bottom: 18px;
 }
+
 
 .nombre_card {
   margin-top: 20px;
@@ -42,3 +44,20 @@
   color: var(--color6);
   background-color: cadetblue;
 }
+
+@media (width <= 960px) {
+  .card_contenedor {
+    width: 200px;
+    height: 330px;
+  }
+
+  .card_image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* @media (width <= 960px) {
+
+
+} */

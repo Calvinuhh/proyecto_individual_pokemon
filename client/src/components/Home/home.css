@@ -68,8 +68,15 @@
   text-decoration: none;
 }
 
+@media (width <= 1015px) {
+  .contenedor_filtros {
+    flex-wrap: wrap;
+  }
+}
 
-/* .pagination_div {
-  display: flex;
-  flex-direction: row;
-} */
+@media (width <= 730px) {
+  .contenedor_filtros {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

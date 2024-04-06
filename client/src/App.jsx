@@ -7,9 +7,9 @@ import Form from "./components/Form/Form.jsx";
 import axios from "axios";
 
 //Development
-// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "http://localhost:3001";
 //Production
-axios.defaults.baseURL = "https://proyecto-pokemon-server.onrender.com";
+// axios.defaults.baseURL = "https://proyecto-pokemon-server.onrender.com";
 
 function App() {
   return (

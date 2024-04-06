@@ -1,6 +1,6 @@
 const server = require("./src/app");
 const database = require("./src/database/db");
-const { PORT } = process.env;
+const { PORT } = require("./config");
 
 database.sync().then(() => {
   server.listen(PORT, () => {
