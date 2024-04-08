@@ -3,6 +3,8 @@ import gif_cargando from "../../assets/gif_cargando.gif";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import back_emoji from "../../assets/back_emoji.png";
 import { pokemonDetail, clearDetail } from "../../redux/actions.js";
 
 const Detail = () => {
@@ -18,7 +20,16 @@ const Detail = () => {
   const detailPokemon = useSelector((state) => state.detail);
 
   return (
-    <>
+    <div id="contenedor_detail">
+      <div id="contenedor_back_detail">
+        <Link to="/home">
+          <button id="back_button_detail">
+            <img id="back_emoji_detail" src={back_emoji} alt="back_emoji" />
+            Volver
+          </button>
+        </Link>
+      </div>
+
       {detailPokemon.length > 0 ? (
         <div className="contenedor_detail">
           <div className="contenedor_name_image">
@@ -66,8 +77,8 @@ const Detail = () => {
         </div>
       ) : detailPokemon.length === 0 ? (
         <div className="not_found_contenedor">
-        <h1 id="not_fount">Pokemon no encontrado :c</h1>
-      </div>
+          <h1 id="not_fount">Pokemon no encontrado :c</h1>
+        </div>
       ) : (
         <div className="contenedor_loading">
           <p className="cargando_parrafo">
@@ -75,7 +86,7 @@ const Detail = () => {
           </p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

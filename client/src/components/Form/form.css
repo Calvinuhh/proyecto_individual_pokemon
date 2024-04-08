@@ -1,9 +1,47 @@
 .form {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 1000px;
   margin: 60px auto;
+  gap: 50px;
+}
+
+#contenedor_back_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+}
+
+#back_emoji_form {
+  width: 30px;
+}
+
+#back_button_form {
+  font-family: "pokemon";
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  margin: solid 1px black;
+  cursor: pointer;
+  background-color: var(--color7);
+  width: 180px;
+  height: 90px;
+  border-radius: 10px;
+  border: 3px solid black;
+  -webkit-box-shadow: 31px 18px 42px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 31px 18px 42px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 31px 18px 42px 0px rgba(0, 0, 0, 0.75);
+  transition: 0.5s ease;
+}
+
+#back_button_form:hover {
+  transform: scale(1.12);
 }
 
 .divisor_form {
@@ -189,10 +227,10 @@
   }
 }
 
-@media (width <= 610px) {
+@media (width <= 700px) {
   .form {
     width: 300px;
-    height: 1500px;
+    height: 1700px;
   }
 
   .contenedor_input_name,
@@ -215,13 +253,16 @@
   }
   .contenedor_form {
     background-color: var(--color8);
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
   }
 
   .contenedor_input_types {
     flex-direction: column;
   }
-.divisor_form {
-  height: 1500px;
-}
-
+  .divisor_form {
+    height: 1500px;
+  }
 }

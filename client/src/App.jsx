@@ -8,6 +8,7 @@ import axios from "axios";
 
 //Development
 // axios.defaults.baseURL = "http://localhost:3001";
+
 //Production
 axios.defaults.baseURL = "https://proyecto-pokemon-server.onrender.com";
 

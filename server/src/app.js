@@ -5,7 +5,13 @@ const apiPokemonsRouter = require("./routers/apiPokemons.routes");
 const apiTypesRouter = require("./routers/apiTypes.routes");
 const pokemonsRouter = require("./routers/pokemons.routes");
 const typesRouter = require("./routers/types.routes");
+
+//Development
+// const { FRONTEND_URL } = require("../config");
+
+//Production
 const { FRONTEND_URL } = process.env;
+
 const server = express();
 
 server.use(

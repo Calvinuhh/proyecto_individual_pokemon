@@ -2,7 +2,9 @@ import "./form.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewPokemon, getTypes } from "../../redux/actions.js";
+import { Link } from "react-router-dom";
 import validation from "../../utils/validation.js";
+import back_emoji from "../../assets/back_emoji.png";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -136,6 +138,16 @@ const Form = () => {
 
   return (
     <div className="form">
+
+      <div id="contenedor_back_form">
+        <Link to="/home">
+          <button id="back_button_form">
+            <img id="back_emoji_form" src={back_emoji} alt="back_emoji" />
+            Volver
+          </button>
+        </Link>
+      </div>
+
       <div className="divisor_form">
         <form className="contenedor_form" onSubmit={(e) => handleSubmit(e)}>
           <div>

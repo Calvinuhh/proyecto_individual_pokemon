@@ -1,5 +1,10 @@
 const server = require("./src/app");
 const database = require("./src/database/db");
+
+//Development
+// const { PORT } = require("./config");
+
+//Production
 const { PORT } = process.env;
 
 database.sync().then(() => {
