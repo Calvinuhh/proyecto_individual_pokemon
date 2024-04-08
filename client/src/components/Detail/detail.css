@@ -106,3 +106,37 @@
   font-weight: normal;
   font-size: 50px;
 }
+
+@media (width <= 950px) {
+  .contenedor_detail {
+    flex-direction: column;
+  }
+
+  #detail_name {
+    margin-top: 700px;
+  }
+
+  .contenedor_name_image {
+    margin-bottom: 100px;
+  }
+
+  .tipos_detail_contenedor {
+    margin-bottom: 20px;
+  }
+
+  .detail_data_contenedor {
+    height: 800px;
+  }
+
+  .life_to_weight_contenedor {
+    height: 500px;
+    margin-bottom: 100px;
+  }
+}
+
+@media (width <= 610px) {
+  #detail_image {
+    width: 300px;
+    height: 300px;
+  }
+}

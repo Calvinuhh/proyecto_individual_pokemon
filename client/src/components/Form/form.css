@@ -182,3 +182,46 @@
   font-family: var(--truculentaFont);
   font-size: 40px;
 }
+
+@media (width <= 950px) {
+  .form {
+    width: 500px;
+  }
+}
+
+@media (width <= 610px) {
+  .form {
+    width: 300px;
+    height: 1500px;
+  }
+
+  .contenedor_input_name,
+  .contenedor_input_image,
+  .contenedor_input_life,
+  .contenedor_input_attack,
+  .contenedor_input_defense,
+  .contenedor_input_speed,
+  .contenedor_input_height,
+  .contenedor_input_weight {
+    width: 300px;
+    background-color: var(--color8);
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenedor_errors {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contenedor_form {
+    background-color: var(--color8);
+  }
+
+  .contenedor_input_types {
+    flex-direction: column;
+  }
+.divisor_form {
+  height: 1500px;
+}
+
+}
