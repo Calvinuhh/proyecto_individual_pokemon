@@ -179,11 +179,7 @@ const Home = () => {
                   attack={elem.attack}
                   image={elem.image}
                   id={elem.id}
-                  types={
-                    elem.types
-                      ? elem.types.map((item) => item)
-                      : elem.Types.map((item) => item.name)
-                  }
+                  types={elem.types}
                   key={index}
                 />
               </Link>
