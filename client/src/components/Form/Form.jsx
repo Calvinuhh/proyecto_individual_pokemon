@@ -138,7 +138,6 @@ const Form = () => {
     setErrors(
       validation({
         ...input,
-        ...typesArr,
         [event.target.name]: event.target.value,
       })
     );
