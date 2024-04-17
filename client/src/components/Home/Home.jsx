@@ -18,7 +18,10 @@ import {
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const allPokemons = useSelector((state) => state.pokemons);
+  const pokemonsState = useSelector((state) => state.allPokemons);
+
   const allTypes = useSelector((state) => state.types);
   const notFound = useSelector((state) => state.notFound);
   const [, setOrder] = useState("");
@@ -178,7 +181,7 @@ const Home = () => {
                   id={elem.id}
                   types={
                     elem.types
-                      ? elem.types
+                      ? elem.types.map((item) => item)
                       : elem.Types.map((item) => item.name)
                   }
                   key={index}

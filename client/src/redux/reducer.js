@@ -117,9 +117,7 @@ const reducer = (state = intialState, { type, payload }) => {
         filterType = state.allPokemons;
       } else {
         filterType = state.allPokemons.filter((elem) =>
-          elem.types
-            ? elem.types.includes(payload)
-            : elem.Types.includes(payload)
+          elem.types?.includes(payload)
         );
       }
       return {

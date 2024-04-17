@@ -4,13 +4,14 @@ const axios = require("axios");
 
 const pokemonsApi = async () => {
   try {
-    const api = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=100");
+    const api = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=50");
 
     const { results } = await api.data;
 
     const dataPokemon = results.map(async (pokemon) => {
       const info = await axios.get(pokemon.url);
       const { data } = info;
+
       return {
         id: data.id,
         name: data.name,
@@ -38,12 +39,27 @@ const getPokemonsDB = async () => {
       include: {
         model: Type,
         attributes: ["name"],
-        through: {
-          attributes: [],
-        },
+        through: { attributes: [] },
       },
     });
-    return findAllPokemons;
+
+    const pokemonsDBFixed = findAllPokemons.map((elem) => {
+      return {
+        id: elem.id,
+        name: elem.name,
+        image: elem.image,
+        life: elem.life,
+        attack: elem.attack,
+        defense: elem.defense,
+        speed: elem.speed,
+        height: elem.height,
+        weight: elem.weight,
+        types: elem.Types.map((elem) => elem.name),
+        createdInDb: elem.createdInDb,
+      };
+    });
+
+    return pokemonsDBFixed;
   } catch (error) {
     throw new Error(error);
   }
@@ -57,11 +73,18 @@ const getPokemons = async (req, res) => {
 
   const pokemons = pokeapi.concat(pokeDB);
 
-  if (name) {
-    pokemonByName = pokemons.filter((elem) => elem.name === name.toLowerCase());
-    res.status(200).json(pokemonByName);
-  } else {
-    res.status(200).json(pokemons);
+  try {
+    if (name) {
+      pokemonByName = pokemons.filter(
+        (elem) => elem.name === name.toLowerCase()
+      );
+      res.status(200).json(pokemonByName);
+    } else {
+      res.status(200).json(pokemons);
+    }
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+    throw new Error("No se encontro ningun pokemon con ese nombre");
   }
 };
 

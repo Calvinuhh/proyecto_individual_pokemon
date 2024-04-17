@@ -46,21 +46,13 @@ const Detail = () => {
               <h3 id="detail_tipos">tipos:</h3>
 
               <div id="detail_types">
-                {detailPokemon[0]?.types
-                  ? detailPokemon[0]?.types.map((elem, i) => {
-                      return (
-                        <p key={i} className="p_type_detail">
-                          {elem}
-                        </p>
-                      );
-                    })
-                  : detailPokemon[0]?.Types.map((elem, i) => {
-                      return (
-                        <p key={i} className="p_type_detail">
-                          {elem.name}
-                        </p>
-                      );
-                    })}
+                {detailPokemon[0]?.types.map((elem, i) => {
+                  return (
+                    <p key={i} className="p_type_detail">
+                      {elem.name}
+                    </p>
+                  );
+                })}
               </div>
             </div>
 

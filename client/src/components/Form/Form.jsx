@@ -5,10 +5,13 @@ import { createNewPokemon, getTypes } from "../../redux/actions.js";
 import { Link } from "react-router-dom";
 import validation from "../../utils/validation.js";
 import back_emoji from "../../assets/back_emoji.png";
+import Swal from "sweetalert2";
 
 const Form = () => {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
+
+  const [typesArr, setTypesArr] = useState([]);
 
   const [input, setInput] = useState({
     name: "",
@@ -73,6 +76,17 @@ const Form = () => {
   const handleSelect = (event) => {
     event.preventDefault();
 
+    const selectedOption = event.target.value;
+    setTypesArr([...typesArr, event.target.value]);
+
+    if (typesArr.includes(selectedOption)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No puedes elegir 2 veces el mismo tipo!",
+      });
+    }
+
     setInput({
       ...input,
       types: [
@@ -124,12 +138,15 @@ const Form = () => {
     setErrors(
       validation({
         ...input,
+        ...typesArr,
         [event.target.name]: event.target.value,
       })
     );
   };
 
   const handleDelete = (event) => {
+    setTypesArr([typesArr.pop()]);
+
     setInput({
       ...input,
       types: input.types.filter((type) => type != event),
@@ -138,7 +155,6 @@ const Form = () => {
 
   return (
     <div className="form">
-
       <div id="contenedor_back_form">
         <Link to="/home">
           <button id="back_button_form">

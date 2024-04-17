@@ -78,7 +78,23 @@ const validation = (input) => {
   if (input.types.length <= 0) {
     errors.types = "Debes elegir al menos 2 tipos";
   }
-  if (input.types.length >= 3) errors.types = "No puedes elegir mas de 2 tipos";
+
+  if (input.types.length >= 2) errors.types = "No puedes elegir mas de 2 tipos";
+
+  function repetidos(arr) {
+    const counter = {};
+    for (let i = 0; i < arr.length; i++) {
+      if (counter[arr[i]]) {
+        return true;
+      } else {
+        counter[arr[i]] = 1;
+      }
+    }
+    return false;
+  }
+
+  if (repetidos(input.types) === true)
+    errors.types = "No puedes repetir el mismo tipo!";
 
   if (!errors.types) errors.types = [];
 
