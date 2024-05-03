@@ -170,7 +170,7 @@ const Form = () => {
           </div>
           <div className="contenedor_input_name">
             <label className="label" htmlFor="name">
-              Name{" "}
+              Name
             </label>
             <input
               id="input_nombre"

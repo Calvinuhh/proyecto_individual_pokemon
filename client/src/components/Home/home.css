@@ -68,6 +68,10 @@
   text-decoration: none;
 }
 
+.not_found {
+  font-family: var(--truculentaFont);
+}
+
 @media (width <= 1015px) {
   .contenedor_filtros {
     flex-wrap: wrap;
