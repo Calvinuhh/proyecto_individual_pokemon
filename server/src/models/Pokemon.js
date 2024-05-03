@@ -45,8 +45,8 @@ const Pokemon = database.define(
     createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true
-    }
+      defaultValue: true,
+    },
   },
   {
     timestamps: false,

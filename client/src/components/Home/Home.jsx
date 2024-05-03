@@ -20,8 +20,6 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const allPokemons = useSelector((state) => state.pokemons);
-  const pokemonsState = useSelector((state) => state.allPokemons);
-
   const allTypes = useSelector((state) => state.types);
   const notFound = useSelector((state) => state.notFound);
   const [, setOrder] = useState("");
@@ -70,6 +68,7 @@ const Home = () => {
 
   const handleFilterTypes = (event) => {
     event.preventDefault();
+    setCurrentPage(1);
     if (event.target.value !== "Tipos") {
       dispatch(filterPokemons(event.target.value));
     }
@@ -169,7 +168,7 @@ const Home = () => {
       </div>
 
       <div className="contenedor_cards_home">
-        {currentPokemons.length ? (
+        {currentPokemons.length > 0 ? (
           currentPokemons?.map((elem, index) => {
             return (
               <Link key={index} className="link_card" to={`/detail/${elem.id}`}>
@@ -185,9 +184,9 @@ const Home = () => {
               </Link>
             );
           })
-        ) : notFound ? (
+        ) : currentPokemons.length === 0 ? (
           <div className="not_found_contenedor">
-            <h1 className="not_fount">Pokemon no encontrado :c</h1>
+            <h1 className="not_found">Pokemon no encontrado :c</h1>
           </div>
         ) : (
           <div className="cargando_contenedor">

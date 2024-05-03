@@ -49,7 +49,7 @@ const Detail = () => {
                 {detailPokemon[0]?.types.map((elem, i) => {
                   return (
                     <p key={i} className="p_type_detail">
-                      {elem.name}
+                      {elem}
                     </p>
                   );
                 })}

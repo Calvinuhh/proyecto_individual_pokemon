@@ -27,6 +27,10 @@
   transform: scale(1.2);
 }
 
+#current_page {
+  color: white;
+}
+
 @media (width <= 960px) {
   .button_pagination {
     width: 40px;

@@ -46,7 +46,7 @@
 
 .divisor_form {
   width: 900px;
-  height: 950px;
+  height: 1600px;
   text-align: center;
   background-color: var(--color8);
   border-radius: 15px;
@@ -56,7 +56,8 @@
 }
 
 .contenedor_form {
-  margin: 20px;
+  margin: 50px;
+  height: 1000px;
 }
 
 #titulo_form,
@@ -71,13 +72,20 @@
   font-family: var(--truculentaFont);
   background-color: var(--color8);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.label {
+  color: whitesmoke;
+  font-size: 30px;
+  font-family: var(--truculentaFont);
 }
 
 .contenedor_input_types {
   padding: 30px;
   gap: 50px;
-  transition: ease 0.5s;
 }
 
 .label_input {
@@ -123,6 +131,7 @@
 #titulo_form {
   color: white;
   font-size: 40px;
+  margin-bottom: 50px;
 }
 
 .contenedor_errors {
@@ -153,10 +162,6 @@
   gap: 100px;
   padding-bottom: 40px;
   background-color: var(--color8);
-}
-
-.contenedor_input_types:hover {
-  transform: scale(1.03);
 }
 
 .contenedor_types_form {
@@ -201,7 +206,6 @@
   border: 2px solid black;
   width: 200px;
   background-color: var(--color8);
-
   border-radius: 20px;
   -webkit-box-shadow: 21px 21px 23px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 21px 21px 23px -4px rgba(0, 0, 0, 0.75);
@@ -212,6 +216,11 @@
 .button:hover {
   transform: scale(1.2);
   cursor: pointer;
+  background-color: rgb(34, 34, 212);
+
+  .crear {
+    background-color: rgb(34, 34, 212);
+  }
 }
 
 .crear {
@@ -219,6 +228,16 @@
   color: white;
   font-family: var(--truculentaFont);
   font-size: 40px;
+  transition: 0.35s ease;
+}
+
+.crear_disabled {
+  background-color: var(--color8);
+  color: white;
+  font-family: var(--truculentaFont);
+  font-size: 40px;
+  /* transition: 0.35s ease; */
+  text-decoration: line-through;
 }
 
 @media (width <= 950px) {
@@ -241,6 +260,8 @@
   .contenedor_input_speed,
   .contenedor_input_height,
   .contenedor_input_weight {
+    display: flex;
+    flex-direction: row;
     width: 300px;
     background-color: var(--color8);
     flex-direction: column;
@@ -255,7 +276,7 @@
     background-color: var(--color8);
     display: flex;
     flex-direction: column;
-
+    height: 1700px;
     align-items: center;
   }
 
@@ -263,6 +284,10 @@
     flex-direction: column;
   }
   .divisor_form {
-    height: 1500px;
+    height: 3000px;
+  }
+
+  #contenedor_back_form {
+    margin-top: 400px;
   }
 }

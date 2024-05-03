@@ -169,6 +169,9 @@ const Form = () => {
             <h3 id="titulo_form">Crea tu Pokemon!</h3>
           </div>
           <div className="contenedor_input_name">
+            <label className="label" htmlFor="name">
+              Name
+            </label>
             <input
               id="input_nombre"
               placeholder="Nombre..."
@@ -184,6 +187,10 @@ const Form = () => {
             </div>
           </div>
           <div className="contenedor_input_image">
+            <label className="label" htmlFor="image">
+              Image
+            </label>
+
             <input
               id="input_image"
               placeholder="Nota: debe ser una URL!"
@@ -199,6 +206,10 @@ const Form = () => {
             </div>
           </div>
           <div className="contenedor_input_life">
+            <label className="label" htmlFor="life">
+              life
+            </label>
+
             <input
               id="input_life"
               placeholder="life..."
@@ -214,6 +225,10 @@ const Form = () => {
             </div>
           </div>
           <div className="contenedor_input_attack">
+            <label className="label" htmlFor="attack">
+              Attack
+            </label>
+
             <input
               id="input_attack"
               placeholder="Attack..."
@@ -229,6 +244,10 @@ const Form = () => {
             </div>
           </div>
           <div className="contenedor_input_defense">
+            <label className="label" htmlFor="defense">
+              Defense
+            </label>
+
             <input
               id="input_defense"
               placeholder="Defense..."
@@ -243,6 +262,10 @@ const Form = () => {
               )}
             </div>
           </div>
+          <label className="label" htmlFor="speed">
+            Speed
+          </label>
+
           <div className="contenedor_input_speed">
             <input
               id="input_speed"
@@ -258,6 +281,10 @@ const Form = () => {
               )}
             </div>
           </div>
+          <label className="label" htmlFor="height">
+            Height
+          </label>
+
           <div className="contenedor_input_height">
             <input
               id="input_height"
@@ -273,6 +300,10 @@ const Form = () => {
               )}
             </div>
           </div>
+          <label className="label" htmlFor="name">
+            Weight
+          </label>
+
           <div className="contenedor_input_weight">
             <input
               id="input_weight"
@@ -363,16 +394,29 @@ const Form = () => {
             ))}
           </div>
 
-          <div className="button_input_form">
-            <button
-              className="button"
-              type="submit"
-              name="submit"
-              disabled={disable()}
-            >
-              <span className="crear">Crear!</span>
-            </button>
-          </div>
+          {disable() === true ? (
+            <div className="button_input_form">
+              <button
+                className="button_disabled"
+                type="submit"
+                name="submit"
+                disabled={disable()}
+              >
+                <span className="crear_disabled">Crear!</span>
+              </button>
+            </div>
+          ) : (
+            <div className="button_input_form">
+              <button
+                className="button"
+                type="submit"
+                name="submit"
+                disabled={disable()}
+              >
+                <span className="crear">Crear!</span>
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </div>
